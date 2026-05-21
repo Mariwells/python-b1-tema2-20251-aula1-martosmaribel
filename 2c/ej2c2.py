@@ -55,12 +55,17 @@ Exemple:
 
 
 def get_element_from_list(items_list, index) -> str:
-    # Write here your code
-    pass
+    if index < 0 or index >= len(items_list):
+        return "The specified index is out of the list's range" 
+    elif not isinstance(items_list, list):
+        return "An unexpected error has occurred: items_list must be a list"
+    else:
+        return items_list[index]        
+    
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
 
-# print(get_element_from_list(["Pencil", "Pen", "Eraser", "Notebook", "Ruler"], 3))
-# print(get_element_from_list(["Pencil", "Pen", "Eraser", "Notebook", "Ruler"], 5))
+print(get_element_from_list(["Pencil", "Pen", "Eraser", "Notebook", "Ruler"], 3))
+print(get_element_from_list(["Pencil", "Pen", "Eraser", "Notebook", "Ruler"], 5))
