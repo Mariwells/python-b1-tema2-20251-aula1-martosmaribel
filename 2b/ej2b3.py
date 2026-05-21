@@ -47,10 +47,17 @@ Exemple:
 """
 
 
+from email.mime import base
+
+
 def triangle_area_calculate(
     base, height):
-    # Write here your code
-    pass
+    if base <= 0 or height <= 0:
+        raise ValueError("La base y la altura deben ser números positivos.")    
+    else:       
+        area_triangle = (base * height) / 2
+    return area_triangle
+    
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta
@@ -59,4 +66,4 @@ def triangle_area_calculate(
 # Si vols provar el teu codi, descomenta les línies següents i executa
 # l'scrip
 
-# print(triangle_area_calculate(33, 45))
+print(triangle_area_calculate(33, 45))
